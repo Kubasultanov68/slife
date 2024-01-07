@@ -1,0 +1,128 @@
+.header {
+  background: white;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  position: fixed;
+  width: 100%;
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left, &__right {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+    transition: .2s;
+    text-transform: uppercase;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  &__search {
+    position: relative;
+    width: 300px;
+    &-input {
+      width: 100%;
+      padding: 10px 0 10px 40px;
+      border-radius: 10px;
+      border: none;
+      background: #f3f4f5;
+      outline: none;
+      &::placeholder {
+        color: #3E3E3E;
+      }
+    }
+    &-icon {
+      font-size: 20px;
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #3E3E3E;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+  &__btn {
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    transition: .2s;
+    &:hover {
+      background: #f3f4f5;
+    }
+    &-icon {
+      font-size: 25px;
+      color: #3E3E3E;
+    }
+    &:active {
+      background: #e3e4e5;
+    }
+  }
+  &__auth {
+    &-avatar {
+      cursor: pointer;
+    }
+    &-username {
+      font-weight: 600;
+    }
+    &-menu {
+
+    }
+    &-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      padding: 10px;
+      color: black;
+      font-weight: 500;
+      transition: .2s;
+      &.user {
+        margin: 0 5px;
+        padding: 25px;
+        border-radius: 5px;
+      }
+      &.mode {
+        &:hover {
+          background: white;
+        }
+      }
+      &:hover {
+        background: #f3f4f5;
+      }
+      &_icon {
+        color: #5726BF;
+        font-size: 25px;
+      }
+      &_select {
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        z-index: 2;
+        outline: none;
+        option {
+          padding: 10px;
+          cursor: pointer;
+        }
+        &:focus {
+          border-color: #5726BF;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}

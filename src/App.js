@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import {useRoutes} from "react-router-dom";
+import Layout from "./Layout";
+import MyProfile from "./pages/MyProfile";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return useRoutes([
+    {
+      path: '/',
+      element: <Layout/>,
+      children: [
+        {
+          path: '',
+          element: (<div style={{height: '1000px'}}></div>)
+        },
+        {
+          path: 'myusername',
+          element: <MyProfile/>
+        },
+        {
+          path: 'message'
+        },
+        {
+          path: 'friends'
+        },
+        {
+          path: 'groups'
+        },
+        {
+          path: 'explore'
+        },
+        {
+          path: 'favorites'
+        },
+        {
+          path: 'settings'
+        },
+      ]
+    }
+  ])
 }
 
 export default App;
